@@ -15,19 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import test_function, special_case_2003, special_case, month_archive
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib.auth import views as auth_views
 
-
 urlpatterns = [
-                  path('articles/2003/', special_case_2003),
-                  path('articles/<int:year>/', special_case),
-                  path('articles/<int:year>/<int:month>/', month_archive),
-                  path('clients/', include('core.urls')),
-                  path('test/', test_function),
+
                   path('admin/', admin.site.urls),
+                  path('', include('core.urls')),
                   path('login/', auth_views.login, name='login'),
                   path('logout/', auth_views.logout, name='logout'),
 

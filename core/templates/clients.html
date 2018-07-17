@@ -1,31 +1,33 @@
 {% extends 'base.html' %}
 {% block title %} Welcome-client section{% endblock %}
 {% block main %}
-    <div class="row">
-        <div class="col-9">
-            <h1>Clients Lists</h1>
-        </div>
-        <div class="col-3">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-9">
+                <h1>Clients Lists</h1>
+            </div>
+            <div class="col-3">
 
-            {% if user.is_authenticated %}
-                Hello {{ user.username }}
-                <a href="{% url 'logout' %}" class="badge badge-secondary">Logout</a>
-            {% else %}
-                <a href="{% url 'login' %}" class="badge badge-secondary">Login</a>
-            {% endif %}
+                {% if user.is_authenticated %}
+                    Hello {{ user.username }}
+                    <a href="{% url 'logout' %}" class="badge badge-secondary">Logout</a>
+                {% else %}
+                    <a href="{% url 'login' %}" class="badge badge-secondary">Login</a>
+                {% endif %}
+            </div>
         </div>
+        <ul class="list-group">
+            {% for client in clients %}
+                <li class="list-group-item">
+                    <p>{{ client }}</p>
+                    <div class="text-right">
+                        <a href="{% url 'client_update' client.id %}" class="btn btn-info">Edit</a>
+                        <a href="{% url 'client_delete' client.id %}" class="btn btn-danger">Delete</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+        <br>
     </div>
-    <ul class="list-group">
-        {% for client in clients %}
-            <li class="list-group-item">
-                <p>{{ client }}</p>
-               <div class="text-right">
-                <a href="{% url 'client_update' client.id %}" class="btn btn-info">Edit</a>
-                <a href="{% url 'client_delete' client.id %}" class="btn btn-danger">Delete</a>
-                   </div>
-            </li>
-        {% endfor %}
-    </ul>
-    <br>
-    <a href="{% url 'client_create' %}" class="btn btn-primary">New Client</a>
+        <a href="{% url 'client_create' %}" class="btn btn-primary">New Client</a>
 {% endblock %}

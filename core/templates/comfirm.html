@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
 {% block title %} Welcome-client editing{% endblock %}
 {% block main %}
-    <h1>Comfirm that you want to delete{{ client.name }}</h1>
-    <form method="post">
-        {% csrf_token %}
-        <button type="submit">Delete</button>
-    </form>
+    <div class="jumbotron">
+        <h1>Comfirm that you want to delete{{ client.name }}</h1>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit">Delete</button>
+        </form>
+    </div>
 {% endblock %}

@@ -76,7 +76,16 @@ WSGI_APPLICATION = 'clients.wsgi.application'
 
 default_dburl = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
 
-DATABASES = {'default': config('DATABASE_URL', default=default_dburl, cast=dburl), }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'clientdb',
+        'USER': 'root',
+        'PASSWORD': 'only4code',
+        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        'PORT': '3306',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
