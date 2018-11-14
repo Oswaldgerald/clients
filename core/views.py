@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import Client
 from .forms import ClientForm
 from django.contrib.auth.decorators import login_required
+from rest_framework import viewsets
 
 
 def list_clients(request):
