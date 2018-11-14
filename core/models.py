@@ -39,7 +39,7 @@ class Sale(models.Model):
     client = models.ForeignKey(Client, on_delete=False)
     date = models.DateTimeField(auto_now_add=True)
     total = models.DecimalField(max_digits=9, decimal_places=2)
-    products = models.ManyToManyField(Product, null=True)
+    products = models.ManyToManyField(Product, blank=True)
 
     def __str__(self):
         return self.sale_number

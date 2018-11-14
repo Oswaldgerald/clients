@@ -16,7 +16,14 @@ class SaleAdmin(admin.ModelAdmin):
     search_fields = ['sale_number', 'client', ]
 
 
+class ProductAdmin(admin.ModelAdmin):
+    fields = ['description ', 'price', 'taxes']
+    list_display = ['description ', 'price', 'taxes']
+    list_filter = ['description ', 'price', 'taxes']
+    search_fields = ['description ', 'price', 'taxes']
+
+
 admin.site.register(Client, ClientAdmin)
 admin.site.register(ID)
 admin.site.register(Sale, SaleAdmin)
-admin.site.register(Product)
+admin.site.register(Product, )
