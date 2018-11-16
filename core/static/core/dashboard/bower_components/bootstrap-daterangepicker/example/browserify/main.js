@@ -1,6 +1,6 @@
 require('../../daterangepicker.js');
 var $ = require('jquery'),
-    moment = require('core/static/dashboard/bower_components/moment/moment');
+    moment = require('core/static/core/dashboard/bower_components/moment/moment');
 
 $(document).ready(function() {
 

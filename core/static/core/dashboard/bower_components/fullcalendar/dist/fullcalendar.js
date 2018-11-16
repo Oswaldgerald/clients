@@ -5,11 +5,11 @@
  */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("core/static/dashboard/bower_components/moment/moment"), require("jquery"));
+		module.exports = factory(require("core/static/core/dashboard/bower_components/moment/moment"), require("jquery"));
 	else if(typeof define === 'function' && define.amd)
-		define(["core/static/dashboard/bower_components/moment/moment", "jquery"], factory);
+		define(["core/static/core/dashboard/bower_components/moment/moment", "jquery"], factory);
 	else if(typeof exports === 'object')
-		exports["FullCalendar"] = factory(require("core/static/dashboard/bower_components/moment/moment"), require("jquery"));
+		exports["FullCalendar"] = factory(require("core/static/core/dashboard/bower_components/moment/moment"), require("jquery"));
 	else
 		root["FullCalendar"] = factory(root["moment"], root["jQuery"]);
 })(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_3__) {

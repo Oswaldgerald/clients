@@ -921,7 +921,7 @@
   };
 
   if (typeof define === 'function' && define.amd) {
-    define(['core/static/dashboard/plugins/pace/pace'], function() {
+    define(['core/static/core/dashboard/plugins/pace/pace'], function() {
       return Pace;
     });
   } else if (typeof exports === 'object') {

@@ -921,7 +921,7 @@
   };
 
   if (typeof define === 'function' && define.amd) {
-    define(['core/static/dashboard/bower_components/PACE/pace'], function() {
+    define(['core/static/core/dashboard/bower_components/PACE/pace'], function() {
       return Pace;
     });
   } else if (typeof exports === 'object') {
